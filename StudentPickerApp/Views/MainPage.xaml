@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentPickerApp.Views.MainPage"
+             Title="Strona główna">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Resources/style.css" />
+    </ContentPage.Resources>
+    <Grid ColumnDefinitions="*,*">
+        <StackLayout Orientation="Vertical" Grid.Column="0" x:Name="left">
+
+                <StackLayout Orientation="Vertical" StyleClass="form">
+                    <Label Text="Dodaj ucznia" StyleClass="Otext"/>
+
+                    <Label Text="Imie:"/>
+                    <Entry x:Name="name_entry"
+                        TextChanged="NameEntry_textchanged"/>
+
+                    <Label Text="Nazwisko:"/>
+                    <Entry x:Name="surname_entry"
+                           TextChanged="SurnameEntry_textchanged"/>
+
+                    <Picker Title="Wybierz klase"
+                            x:Name="PickAClass"
+                            SelectedIndexChanged="ClassPicker_selectedIndexChanged">
+                    </Picker>
+
+                    <Button Text="Dodaj"
+                            Clicked="AddButton_clicked"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" StyleClass="form">
+                    <Label Text="Dodaj Klasę" StyleClass="Otext"/>
+                    <Label Text="Nazwa:"/>
+                    <Entry TextChanged="ClassNameEntry_textchanged"/>
+
+                    <Button Text="Dodaj"
+                            Clicked="AddClassButton_clicked"/>
+                </StackLayout>
+            
+            </StackLayout>
+
+        <StackLayout Orientation="Vertical" Grid.Column="1" x:Name="right">
+
+            <Label Text="Lista klas" StyleClass="Otext"/>
+
+            <CollectionView
+                        x:Name="ClassesList"
+                        SelectionMode="Single"
+                        SelectionChanged="ClassesCollectronView_selectronChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button x:Name="classDetails"
+                    Text="Pokarz szczegóły klasy"
+                    Clicked="ShowClassDetails_clicked"
+                    IsVisible="false"/>
+
+            <Button x:Name="randomStudent"
+                    Text="Wylosuj ucznia do odpowiedzi"
+                    Clicked="RandomStudent_clicked"
+                    IsVisible="false"/>
+            <Label x:Name="pickedStudent"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

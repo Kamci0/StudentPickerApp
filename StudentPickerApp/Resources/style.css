@@ -1,0 +1,61 @@
+﻿^ContentPage{
+    background-color: #5F5B6B;
+    padding: 10;
+}
+
+#left {
+    margin: 5;
+}
+.form {
+    margin: 5;
+}
+
+#right {
+    margin: 5;
+}
+
+.Otext {
+    color: #CC5803;
+    font-size: 35;
+    font-weight: bold;
+}
+
+.Otext2 {
+    color: #CC5803;
+    font-size: 15;
+}
+button {
+    background-color: #CC5803;
+    color: white;
+    font-size: 18;
+}
+.StudentItem{
+    margin: 5;
+    padding: 5;
+}
+
+CollectionView>StackLayout, Frame>StackLayout {
+    font-size: 17;
+    text-align: center;
+    margin: 5;
+}
+
+Frame{
+    margin: 2;
+}
+
+#pickedStudent {
+    text-align: center;
+    color: #CC5803;
+    font-size: 20;
+    margin: 10;
+    padding: 5;
+}
+
+Entry{
+    background-color: white;
+    color: #CC5803;
+}
+Picker{
+    background-color: white;
+}
